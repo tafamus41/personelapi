@@ -15,8 +15,8 @@ module.exports = async function() {
     /* REMOVE DATABASE */
     
     /* Department & Personnel */
-    const Department = require('../models/department.model')
-    const Personnel = require('../models/personnel.model')
+    const Department = require('../models/department')
+    const Personnel = require('../models/personnel')
     const departments = [
         "FullStack Department",
         "DevOps Department",
