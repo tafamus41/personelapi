@@ -17,7 +17,11 @@
     "express": "^4.21.1",
     "express-async-errors": "^3.1.1",
     "http-status-codes": "^2.3.0",
-    "mongoose": "^8.8.2"
+    "mongoose": "^8.8.2",
+    "morgan": "^1.10.0",
+    "redoc-express": "^2.1.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
