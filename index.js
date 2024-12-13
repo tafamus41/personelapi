@@ -25,9 +25,18 @@ dbConnection();
 app.use(express.json());
 
 // cookie: httpOnly:true XSS Cross Site Scripting, secure:https
+const session = require("cookie-session");
+
+// Run with general settings:
+app.use(
+  session({
+    secret: process.env.SECRET_KEY,
+    httpOnly: false,
+  })
+);
 
 // res.getModelList():
-app.use(require("./src/middlewares/findSearchSortPage"));
+app.use(require("./src/middlewares/queryHandler"));
 
 // HomePath:
 app.all("/", (req, res) => {
@@ -35,13 +44,10 @@ app.all("/", (req, res) => {
     error: false,
     message: "Welcome to PERSONNEL API",
     session: req.session,
-    isLogin: req.isLogin,
   });
 });
 
-//departments
-
-//personnels
+app.use(require("./src/routes/index"))
 
 //not found routes
 app.all("*", async (req, res) => {
@@ -59,7 +65,7 @@ app.listen(PORT, () => console.log("http://127.0.0.1:" + PORT));
 
 /* ------------------------------------------------------- */
 // Syncronization (must be in commentLine):
-// require('./src/helpers/sync')()
+require('./src/helpers/sync')()
 
 if (process.env.NODE_ENV == "development") {
   return;
