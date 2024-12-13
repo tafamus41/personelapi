@@ -29,15 +29,4 @@ isAdminOrLead : (req,res,next)=>{
     throw new Error("NoPermission: You must login to be Admin or DepartmentLead")
  }
 }
-
-
-
-
-
-
-
-
-
-
-
 }
