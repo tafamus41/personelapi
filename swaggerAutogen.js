@@ -67,7 +67,6 @@ const document = {
     }
 }
 
-console.log()
 
 const routes = ['./index.js']
 const outputFile = './swagger.json'
