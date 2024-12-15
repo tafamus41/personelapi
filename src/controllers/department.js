@@ -93,6 +93,7 @@ module.exports = {
         #swagger.summary = 'Delete Department'
     */
     const data = await Department.deleteOne({ _id: req.params.id });
+    console.log(data)
     res.status(data.deletedCount ? 204 : 404).send({
       error: !data.deletedCount,
       data,
