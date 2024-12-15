@@ -100,6 +100,10 @@ module.exports = {
   },
 
   personnels: async (req, res) => {
+     /*
+        #swagger.tags = ['Departments']
+        #swagger.summary = 'Read personnels of concerning Department'
+    */
     //! data
     const filter = { departmentId: req.params.id };
     const data = await res.getModelList(Personnel, filter, "departmentId");
