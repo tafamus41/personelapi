@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
 
 //router.params("/categoryId",idValidation)
 /* module.exports = (req, res, next, id) => {
-  console.log(id, "------");
+
   if (!mongoose.Types.ObjectId.isValid(id)) {
     throw new BadRequestError("Invalid MongoDB ID");
   }
